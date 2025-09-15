@@ -26,7 +26,7 @@ jobs:
         run: node backtest.js
 
       - name: Save output file
-	uses: actions/upload-artifact@v4
-	with:
-	  name: build-output
-	  path: dist/**
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: dist/**
