@@ -1,6 +1,6 @@
 // backtest.js
 const fs = require("fs");
-const { getCloses, SMA, BOLL, MACD } = require("../analyst");
+const { getCloses, SMA, BOLL, MACD } = require("./analyst");
 
 // --- parameter trading ---
 /*const periodBB = 20;
