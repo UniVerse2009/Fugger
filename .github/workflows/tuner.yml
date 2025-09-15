@@ -24,3 +24,9 @@ jobs:
 
       - name: Run Node CJS file
         run: node backtest.js
+
+      - name: Save output file
+	uses: actions/upload-artifact@v4
+	with:
+	  name: build-output
+	  path: dist/**

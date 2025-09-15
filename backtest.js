@@ -81,7 +81,6 @@ for(let BBPeriod = 10; BBPeriod <= 50; BBPeriod++){
 	}
 }
 
-res.sort((a, b) => b.winRate - a.winRate);
-for(let i = 0; i < 100; i++){
-	console.log(res[i]);
-}
+res.sort((a, b) => b.winRate - a.winRate || b.wins - a.wins);
+fs.writeFileSync("./dist/output.json", JSON.stringify(res, null, 2));
+console.log("Artifacts telah dibuat");
