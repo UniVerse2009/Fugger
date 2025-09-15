@@ -82,6 +82,6 @@ for(let BBPeriod = 10; BBPeriod <= 50; BBPeriod++){
 }
 
 res.sort((a, b) => b.winRate - a.winRate);
-console.log(res[0]);
-console.log(res[1]);
-console.log(res[2]);
+for(int i = 0; i < 100; i++){
+	console.log(res[i]);
+}
