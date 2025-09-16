@@ -23,7 +23,7 @@ jobs:
         run: npm install
 
       - name: Run Node CJS file
-        run: node bb_macd_tuner_1.js
+        run: node bb_macd_tuner_0.js
 
       - name: Save output file
         uses: actions/upload-artifact@v4

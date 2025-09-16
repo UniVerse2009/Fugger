@@ -65,7 +65,7 @@ function backtestBBMacd(ohlcv, periodBB, multBB, shortMACD, longMACD, signalMACD
 let res = [];
 
 // Contoh penggunaan (dummy data)
-const data = JSON.parse(fs.readFileSync("./FARTCOIN1_8-25.json"));
+const data = JSON.parse(fs.readFileSync("./TROLLSOL1_8-25.json"));
 //console.log(backtestBBMacd(data, 20, 2, 12, 26, 9, -0.01, 0.01));
 const BBMult = [1.0, 1.5, 2.0];
 for(let BBPeriod = 10; BBPeriod <= 50; BBPeriod++){
