@@ -74,7 +74,7 @@ for(let BBPeriod = 10; BBPeriod <= 50; BBPeriod++){
 			for(let longMACD = 16; longMACD <= 35; longMACD++){
 				for(let signalMACD = 5; signalMACD <= 15; signalMACD++){
 					console.log(`BBPeriod=${BBPeriod} BBMult=${BBMult} short=${shortMACD} long=${longMACD} signal=${signalMACD}`);
-					res.push(backtestBBMacd(data, BBPeriod, mult, shortMACD, longMACD, signalMACD, -0.01, 0.01));
+					res.push(backtestBBMacd(data, BBPeriod, mult, shortMACD, longMACD, signalMACD, -0.01, 0.02));
 				}
 			}
 		}
