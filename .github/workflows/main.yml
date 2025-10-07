@@ -1,0 +1,33 @@
+name: Routinite
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"  # tiap 15 menit
+  workflow_dispatch:         # bisa juga dijalankan manual, biar ga nunggu 15 menit doang
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check if active.status exists
+        id: check_active
+        run: |
+          if [ -f "active.status" ]; then
+            echo "status=true" >> $GITHUB_OUTPUT
+          else
+            echo "active.status tidak ada, ngapain juga jalanin bot kalau lagi off."
+            echo "status=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Run main.js
+        if: steps.check_active.outputs.status == 'true'
+        env:
+          TELEGRAM_FUGGER_BOT_TOKEN: ${{ secrets.TELEGRAM_FUGGER_BOT_TOKEN }}
+          TELEGRAM_FUGGER_BOT_CHAT_ID: ${{ secrets.TELEGRAM_FUGGER_BOT_CHAT_ID }}
+        run: |
+          echo "active.status ada, gaskeun!"
+          node main.js
+
