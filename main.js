@@ -5,7 +5,7 @@ const TELEGRAM_CHAT_ID = process.env.TELEGRAM_FUGGER_BOT_CHAT_ID;
 let ohlcv;
 
 function getCloses(ohlcv) {
-	return ohlcv.map(candle => candle[4]);
+	return ohlcv.map(candle => candle[3]);
 }
 
 function expectedPrice(A, C, B_p, k, p) {
